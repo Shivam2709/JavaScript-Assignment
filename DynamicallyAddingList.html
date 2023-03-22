@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamically Adding List Items to an Ordered List</title>
+</head>
+<body>
+    <h1>Dynamically Adding List Items to an Ordered List</h1>
+
+    <ol id="list">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JAVASCRIPT</li>
+        <li>JQuery</li>
+        <li>BOOTSTRAP</li>
+    </ol>
+
+    <button id="add-item">Add Item</button>
+</body>
+
+<script>
+    const items = ["React", "Node.js", "MongoDB", "Express.js", "Vue.js"];
+    let currentItem = 0;
+    const list = document.getElementById("list");
+     const button = document.getElementById("add-item");
+     button.addEventListener("click", () => {
+        if(currentItem >= items.length) {
+            alert("All items have been added!");
+            return;
+        }
+        const newItem = document.createElement("li");
+        newItem.innerHTML = items[currentItem++];
+        list.appendChild(newItem);
+     });
+</script>
+</html>

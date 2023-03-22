@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Move the Images</title>
+    <style>
+        #image {
+            position:absolute;
+            width: 20vw;
+            height: 20vh;
+            top: 30%;
+            left: 20%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <img src="https://images.pexels.com/photos/15823362/pexels-photo-15823362.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" id="image">
+
+<!--========================================= JavaScript ============================================================-->
+    <script>
+        const image = document.getElementById('image');
+        let posX = 0;
+        let posY = 0;
+
+        document.addEventListener("keydown", (event) => {
+            if(event.code === "ArrowUp"){
+                posY -=10;
+                image.style.top = posY +"px";
+            } else if (event.code === "ArrowDown"){
+                posY += 10;
+                image.style.top = posY + "px";
+            }else if (event.code === "ArrowLeft") {
+                posX -= 10;
+                image.style.left = posX + "px";
+            }else if (event.code === "ArrowRight") {
+                posX += 10;
+                image.style.left = posX + "px";
+            }
+        })
+    </script>
+</body>
+</html>
